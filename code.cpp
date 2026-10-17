@@ -1,15 +1,6 @@
 // Build: g++ -std=c++17 -O2 -Wall snake.cpp -pthread -o snake
 // Controls: type w/a/s/d (or q) then Enter. Swap StdinInput for ncurses/SDL later.
 #include<bits/stdc++.h>
-#include <chrono>
-#include <deque>
-#include <iostream>
-#include <mutex>
-#include <optional>
-#include <queue>
-#include <random>
-#include <string>
-#include <thread>
 
 enum class Dir { Up, Down, Left, Right };
 
