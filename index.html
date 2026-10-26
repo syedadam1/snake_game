@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WildSnake | Jungle Survival</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="topbar">
+      <div class="brand">🌿 Wild<span>Snake</span></div>
+      <button id="themeBtn" class="btn secondary">☀ Light Mode</button>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">WILDERNESS ARCADE · SURVIVAL MODE</p>
+      <h1>Enter the wild.<br><span>Eat. Grow. Survive.</span></h1>
+      <p class="description">
+        Hunt for food, avoid the mongoose, and survive deep in the jungle.
+      </p>
+
+      <div class="stats">
+        <div class="stat">
+          <small>SCORE</small>
+          <strong id="score">000</strong>
+        </div>
+        <div class="stat">
+          <small>BEST</small>
+          <strong id="best">000</strong>
+        </div>
+      </div>
+    </section>
+
+    <div class="layout">
+      <section class="game-card">
+        <div class="game-header">
+          <span><i class="dot"></i> <span id="status">READY TO EXPLORE</span></span>
+          <span class="grid-label">JUNGLE / 001</span>
+        </div>
+
+        <div class="board-wrap">
+          <div class="arena">
+            <canvas id="game" width="720" height="480"></canvas>
+
+            <div id="overlay" class="overlay">
+              <div>
+                <h2 id="overlayTitle">The forest is waiting.</h2>
+                <p id="overlayText">
+                  Collect wildlife food. Watch for the mongoose!
+                </p>
+                <button id="overlayBtn" class="btn primary">
+                  Start expedition ↗
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-actions">
+          <button id="startBtn" class="btn primary">▶ Start</button>
+          <button id="pauseBtn" class="btn secondary">Ⅱ Pause</button>
+          <button id="resetBtn" class="btn secondary">↻ Reset</button>
+        </div>
+      </section>
+
+      <aside>
+        <section class="side-card">
+          <h3>How to move</h3>
+
+          <div class="controls">
+            <span></span><button class="key" data-dir="up">↑</button><span></span>
+            <button class="key" data-dir="left">←</button>
+            <button class="key" data-dir="down">↓</button>
+            <button class="key" data-dir="right">→</button>
+          </div>
+
+          <p class="hint">
+            Arrow keys or WASD<br>
+            Space to pause · Enter to start
+          </p>
+        </section>
+
+        <section class="side-card">
+          <h3>Game settings</h3>
+
+          <label class="setting">
+            Speed
+            <select id="speed">
+              <option value="160">Chill</option>
+              <option value="120" selected>Classic</option>
+              <option value="80">Fast</option>
+              <option value="50">Expert</option>
+            </select>
+          </label>
+
+          <label class="setting">
+            Wall collision
+            <select id="walls">
+              <option value="on">Game over</option>
+              <option value="off">Wrap around</option>
+            </select>
+          </label>
+
+          <label class="setting">
+            Sound
+            <select id="sound">
+              <option value="off">Off</option>
+              <option value="on">On</option>
+            </select>
+          </label>
+        </section>
+
+        <section class="side-card">
+          <h3>Wildlife guide</h3>
+          <ul class="tips">
+            <li>🦗 <b>0–190 points:</b> Insects and lizards</li>
+            <li>🐸 <b>200–490 points:</b> Frogs and rabbits</li>
+            <li>🦌 <b>500+ points:</b> Deer and wild boar</li>
+            <li>🐾 A mongoose appears after every meal!</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <footer>BUILT FOR QUICK REFLEXES · GOOD LUCK</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
