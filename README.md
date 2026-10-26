@@ -170,9 +170,9 @@ A leaderboard for comparing high scores.
 Improved mobile controls and gameplay.
 
 👨‍💻 Author
-
-YOUR NAME
-
-GitHub: YOUR_USERNAME
+SYED ADAM
+SAMPATH
+GitHub:syedadam1
+GitHub:sampath-2008
 
 Explore the jungle. Hunt for food. Survive longer. Become the ultimate WildSnake! 🐍🌿
