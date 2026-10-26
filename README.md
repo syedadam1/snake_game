@@ -149,7 +149,7 @@ Play the game: [Add your GitHub Pages URL here]
 
 Example:
 
-https://YOUR_USERNAME.github.io/wildsnake/
+https://syedadam1.github.io/snake_game/
 
 Replace the example with your actual published website address.
 
