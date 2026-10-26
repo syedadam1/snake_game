@@ -112,7 +112,7 @@ GitHub Pages — Hosting the game as a website.
 
 Replace YOUR_USERNAME with your GitHub username.
 
-git clone https://github.com/YOUR_USERNAME/wildsnake.git
+git clone https://github.com/syedadam1/snake_game.git
 
 2. Enter the project directory
 
