@@ -106,31 +106,9 @@ Git and GitHub — Version control and project hosting.
 
 GitHub Pages — Hosting the game as a website.
 
-🚀 Run the Project Locally
-
-1. Clone the repository
-
-Replace YOUR_USERNAME with your GitHub username.
 
 git clone https://github.com/syedadam1/snake_game.git
 
-2. Enter the project directory
-
-cd wildsnake
-
-3. Start a local web server
-
-If Python is installed, run:
-
-python -m http.server 8000
-
-4. Open the game
-
-Visit the following address in your browser:
-
-http://localhost:8000
-
-Alternatively, open index.html directly in your browser. A local server is recommended for more reliable testing.
 
 📁 Project Structure
 
@@ -141,27 +119,17 @@ wildsnake/
 ├── assets/          # Wildlife images and other assets
 └── README.md        # Project documentation
 
-Your actual folder and asset filenames may differ depending on your repository.
 
 🌐 Live Demo
 
-Play the game: [Add your GitHub Pages URL here]
-
-Example:
-
 https://syedadam1.github.io/snake_game/
 
-Replace the example with your actual published website address.
 
 📸 Screenshots
+<img width="217" height="187" alt="image" src="https://github.com/user-attachments/assets/1b5c8ca7-bab6-4e0f-a087-57c8d9e84ffd" />
+<img width="679" height="494" alt="image" src="https://github.com/user-attachments/assets/3e674164-5d97-4ff9-9a62-1d09970d13ea" />
+<img width="212" height="260" alt="image" src="https://github.com/user-attachments/assets/9dc13e50-3cb1-4ff4-b797-5302beaf372e" />
 
-Add screenshots of your game here to showcase the jungle environment, glowing food, and gameplay.
-
-Example Markdown:
-
-![WildSnake Gameplay](screenshots/gameplay.png)
-
-To use this example, create a screenshots folder and add an image named gameplay.png.
 
 🧠 What I Learned
 
