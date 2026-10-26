@@ -1,4 +1,3 @@
-
 (() => {
   "use strict";
 
@@ -13,7 +12,10 @@
   const MAX_OBSTACLES = 5;
   const FOOD_POINTS = 10;
 
-  // Wildlife images are loaded from the assets folder.
+  /*
+    Put your actual wildlife photos inside the assets folder.
+    If an image is missing, the game uses a bright emoji fallback.
+  */
   const assets = {};
 
   const imageFiles = {
@@ -50,7 +52,6 @@
   let timer = null;
   let turnQueued = false;
   let touchStart = null;
-  let foodAnimationFrame = null;
 
   $("best").textContent = String(best).padStart(3, "0");
 
@@ -70,6 +71,7 @@
   }
 
   function freeCell() {
+    // Avoid the snake, food, and existing obstacles.
     for (let attempt = 0; attempt < 2000; attempt++) {
       const cell = randomCell();
 
@@ -88,6 +90,7 @@
       }
     }
 
+    // A fallback for an unusually crowded board.
     for (let y = 0; y < ROWS; y++) {
       for (let x = 0; x < COLS; x++) {
         const cell = { x, y };
@@ -106,7 +109,7 @@
   }
 
   function wildlifeChoices() {
-    // Above 200 points: pigs, deer and wild boars.
+    // The thresholds are based on the current score.
     if (score > 200) {
       return [
         { asset: "pig", emoji: "🐷", name: "Pig" },
@@ -115,7 +118,6 @@
       ];
     }
 
-    // Above 100 points: rabbits and frogs.
     if (score > 100) {
       return [
         { asset: "frog", emoji: "🐸", name: "Frog" },
@@ -123,7 +125,6 @@
       ];
     }
 
-    // Starting level: insects and small reptiles.
     return [
       { asset: "insect", emoji: "🦗", name: "Insect" },
       { asset: "lizard", emoji: "🦎", name: "Lizard" },
@@ -147,7 +148,6 @@
   function updateStats() {
     $("score").textContent = String(score).padStart(3, "0");
     $("best").textContent = String(best).padStart(3, "0");
-
     $("obstacleCount").textContent =
       `${obstacles.length} / ${MAX_OBSTACLES}`;
   }
@@ -176,7 +176,6 @@
   function resetGame() {
     clearInterval(timer);
     timer = null;
-    stopFoodAnimation();
 
     snake = [
       { x: 8, y: 8 },
@@ -221,9 +220,7 @@
     state = "running";
     hideOverlay();
     updateStatus();
-
     scheduleTick();
-    startFoodAnimation();
   }
 
   function scheduleTick() {
@@ -238,10 +235,8 @@
   function pauseGame() {
     if (state === "running") {
       state = "paused";
-
       clearInterval(timer);
       timer = null;
-      stopFoodAnimation();
 
       showOverlay(
         "Take cover.",
@@ -260,7 +255,6 @@
 
     clearInterval(timer);
     timer = null;
-    stopFoodAnimation();
 
     showOverlay(
       "Expedition ended.",
@@ -284,7 +278,7 @@
       y: snake[0].y + direction.y
     };
 
-    // Choose whether the snake can cross the borders.
+    // Border behavior.
     if ($("walls").value === "off") {
       head.x = (head.x + COLS) % COLS;
       head.y = (head.y + ROWS) % ROWS;
@@ -300,7 +294,8 @@
 
     const eating = samePosition(head, food);
 
-    // The tail moves away if the snake isn't eating.
+    // Moving into the old tail position is allowed if the
+    // snake isn't eating, because that tail moves away.
     const bodyToCheck = eating
       ? snake
       : snake.slice(0, -1);
@@ -325,8 +320,11 @@
         localStorage.setItem("wildsnake-best", String(best));
       }
 
-      // FIFO queue: keep a maximum of five obstacles.
-      // When a sixth is added, remove the oldest obstacle.
+      /*
+        FIFO obstacle queue:
+        Add the new mongoose at the end.
+        If the queue exceeds five, remove the oldest one.
+      */
       obstacles.push(freeCell());
 
       if (obstacles.length > MAX_OBSTACLES) {
@@ -352,7 +350,7 @@
 
     if (state !== "running" || turnQueued) return;
 
-    // Don't allow a 180-degree reversal.
+    // Prevent a 180-degree reversal.
     if (
       x === -direction.x &&
       y === -direction.y
@@ -441,16 +439,15 @@
   function drawWildlifeImage(name, x, y, width, height) {
     if (!imageIsReady(name)) return false;
 
+    const image = assets[name];
+
     ctx.save();
 
-    ctx.shadowColor = name === "insect"
-      ? "#fff36b"
-      : "#b8ff70";
-
+    ctx.shadowColor = "#b8ff70";
     ctx.shadowBlur = name === "insect" ? 25 : 10;
 
     ctx.drawImage(
-      assets[name],
+      image,
       x,
       y,
       width,
@@ -472,6 +469,7 @@
 
     ctx.save();
 
+    // Use the supplied snake photo for the head if available.
     if (imageIsReady("snake")) {
       ctx.shadowColor = "#6be8ee";
       ctx.shadowBlur = 14;
@@ -484,7 +482,6 @@
         CELL_H - 2,
         8
       );
-
       ctx.clip();
 
       ctx.drawImage(
@@ -499,7 +496,7 @@
       return;
     }
 
-    // Fallback snake head.
+    // Fallback snake head if the photo isn't installed.
     ctx.shadowColor = "#7df5f2";
     ctx.shadowBlur = 14;
     ctx.fillStyle = "#55d7ce";
@@ -558,8 +555,7 @@
 
     const hue = 174 + (index % 4) * 5;
 
-    ctx.fillStyle =
-      `hsl(${hue}, 60%, ${Math.max(32, 48 - index * 0.15)}%)`;
+    ctx.fillStyle = `hsl(${hue}, 60%, ${Math.max(32, 48 - index * 0.15)}%)`;
 
     ctx.shadowColor = "#3ee5d2";
     ctx.shadowBlur = 5;
@@ -596,7 +592,7 @@
   }
 
   // --------------------------------------------------
-  // FOOD: HIGH VISIBILITY + PULSING GLOW
+  // FOOD
   // --------------------------------------------------
 
   function drawFood() {
@@ -605,52 +601,311 @@
     const centerX = (food.x + 0.5) * CELL_W;
     const centerY = (food.y + 0.5) * CELL_H;
 
-    // Smooth animation based on elapsed time.
-    const time = performance.now() / 250;
-    const pulse = 1 + 0.12 * Math.sin(time);
-    const radius = 13 * pulse;
+    const size = 29;
+
+    // Bright halo, particularly for insects.
+    ctx.save();
+
+    ctx.shadowColor = food.asset === "insect"
+      ? "#fff06a"
+      : "#b8ff70";
+
+    ctx.shadowBlur = food.asset === "insect" ? 30 : 14;
+
+    ctx.fillStyle = food.asset === "insect"
+      ? "rgba(255,240,106,0.2)"
+      : "rgba(184,255,112,0.12)";
+
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, 12, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.restore();
+
+    // Use the exact wildlife image when available.
+    if (
+      drawWildlifeImage(
+        food.asset,
+        centerX - size / 2,
+        centerY - size / 2,
+        size,
+        size
+      )
+    ) {
+      return;
+    }
+
+    // High-visibility fallback.
+    ctx.save();
+
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.font = "27px serif";
+
+    if (food.asset === "insect") {
+      ctx.shadowColor = "#fff06a";
+      ctx.shadowBlur = 24;
+    }
+
+    ctx.fillText(food.emoji, centerX, centerY);
+    ctx.restore();
+  }
+
+  // --------------------------------------------------
+  // MONGOOSE OBSTACLES
+  // --------------------------------------------------
+
+  function drawMongoose(position) {
+    const x = position.x * CELL_W;
+    const y = position.y * CELL_H;
+
+    if (
+      drawWildlifeImage(
+        "mongoose",
+        x - 1,
+        y - 1,
+        CELL_W + 2,
+        CELL_H + 2
+      )
+    ) {
+      return;
+    }
+
+    // Fallback illustration until mongoose.png is provided.
+    const centerX = x + CELL_W / 2;
+    const centerY = y + CELL_H / 2;
 
     ctx.save();
 
-    // 1. Large golden glow.
-    const glow = ctx.createRadialGradient(
-      centerX, centerY, 2,
-      centerX, centerY, 36 * pulse
-    );
+    ctx.shadowColor = "#ffb45e";
+    ctx.shadowBlur = 12;
+    ctx.fillStyle = "#a16b3c";
 
-    glow.addColorStop(0, "rgba(255,255,190,1)");
-    glow.addColorStop(0.20, "rgba(255,235,65,0.95)");
-    glow.addColorStop(0.50, "rgba(255,170,20,0.48)");
-    glow.addColorStop(1, "rgba(255,140,0,0)");
-
-    ctx.fillStyle = glow;
-
+    // Body.
     ctx.beginPath();
-    ctx.arc(
+    ctx.ellipse(
       centerX,
       centerY,
-      36 * pulse,
+      10,
+      6,
+      -0.15,
       0,
       Math.PI * 2
     );
-
     ctx.fill();
 
-    // 2. Thick dark border for contrast.
-    ctx.shadowBlur = 0;
-    ctx.strokeStyle = "#17200b";
-    ctx.lineWidth = 7;
+    // Head.
+    ctx.beginPath();
+    ctx.arc(centerX + 8, centerY - 3, 5, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Tail.
+    ctx.strokeStyle = "#c18a52";
+    ctx.lineWidth = 2;
 
     ctx.beginPath();
-    ctx.arc(
-      centerX,
-      centerY,
-      radius + 5,
-      0,
-      Math.PI * 2
+    ctx.moveTo(centerX - 8, centerY + 1);
+    ctx.quadraticCurveTo(
+      centerX - 15,
+      centerY + 8,
+      centerX - 11,
+      centerY + 10
     );
-
     ctx.stroke();
 
-    // 3. Bright yellow pulsing ring.
-    ctx.strokeStyle = "#fff700";
+    // Eye.
+    ctx.fillStyle = "#fff0c7";
+
+    ctx.beginPath();
+    ctx.arc(centerX + 10, centerY - 4, 1.2, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.restore();
+  }
+
+  // --------------------------------------------------
+  // MAIN DRAW
+  // --------------------------------------------------
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    drawForestFloor();
+
+    obstacles.forEach(drawMongoose);
+
+    drawFood();
+    drawSnake();
+  }
+
+  // --------------------------------------------------
+  // SOUND
+  // --------------------------------------------------
+
+  function playSound(frequency) {
+    if ($("sound").value !== "on") return;
+
+    try {
+      const AudioContextClass =
+        window.AudioContext || window.webkitAudioContext;
+
+      if (!AudioContextClass) return;
+
+      const audio = new AudioContextClass();
+      const oscillator = audio.createOscillator();
+      const gain = audio.createGain();
+
+      oscillator.frequency.value = frequency;
+      gain.gain.value = 0.035;
+
+      oscillator.connect(gain);
+      gain.connect(audio.destination);
+
+      oscillator.start();
+      oscillator.stop(audio.currentTime + 0.07);
+
+      oscillator.onended = () => audio.close();
+    } catch {
+      // Audio isn't required for gameplay.
+    }
+  }
+
+  // --------------------------------------------------
+  // CONTROLS
+  // --------------------------------------------------
+
+  document.addEventListener("keydown", event => {
+    const key = event.key.toLowerCase();
+
+    if (
+      [
+        "arrowup",
+        "arrowdown",
+        "arrowleft",
+        "arrowright",
+        " "
+      ].includes(key)
+    ) {
+      event.preventDefault();
+    }
+
+    if (key === "arrowup" || key === "w") {
+      changeDirection(0, -1);
+    } else if (key === "arrowdown" || key === "s") {
+      changeDirection(0, 1);
+    } else if (key === "arrowleft" || key === "a") {
+      changeDirection(-1, 0);
+    } else if (key === "arrowright" || key === "d") {
+      changeDirection(1, 0);
+    } else if (key === " ") {
+      if (state === "running" || state === "paused") {
+        pauseGame();
+      }
+    } else if (key === "enter") {
+      if (state === "ready" || state === "paused") {
+        startGame();
+      } else if (state === "over") {
+        resetGame();
+        startGame();
+      }
+    }
+  });
+
+  // On-screen direction controls.
+  document.querySelectorAll(".key").forEach(button => {
+    button.addEventListener("click", () => {
+      const directions = {
+        up: [0, -1],
+        down: [0, 1],
+        left: [-1, 0],
+        right: [1, 0]
+      };
+
+      const [x, y] = directions[button.dataset.dir];
+
+      changeDirection(x, y);
+    });
+  });
+
+  // Mobile swipe controls.
+  canvas.addEventListener("touchstart", event => {
+    const touch = event.changedTouches[0];
+
+    touchStart = {
+      x: touch.clientX,
+      y: touch.clientY
+    };
+  }, { passive: true });
+
+  canvas.addEventListener("touchend", event => {
+    if (!touchStart) return;
+
+    const touch = event.changedTouches[0];
+
+    const dx = touch.clientX - touchStart.x;
+    const dy = touch.clientY - touchStart.y;
+
+    if (Math.max(Math.abs(dx), Math.abs(dy)) > 18) {
+      if (Math.abs(dx) > Math.abs(dy)) {
+        changeDirection(dx > 0 ? 1 : -1, 0);
+      } else {
+        changeDirection(0, dy > 0 ? 1 : -1);
+      }
+    }
+
+    touchStart = null;
+  }, { passive: true });
+
+  // --------------------------------------------------
+  // BUTTONS AND SETTINGS
+  // --------------------------------------------------
+
+  $("startBtn").addEventListener("click", startGame);
+  $("pauseBtn").addEventListener("click", pauseGame);
+  $("resetBtn").addEventListener("click", resetGame);
+
+  $("overlayBtn").addEventListener("click", () => {
+    if (state === "over") {
+      resetGame();
+    }
+
+    startGame();
+  });
+
+  $("speed").addEventListener("change", () => {
+    if (state === "running") {
+      scheduleTick();
+    }
+  });
+
+  // Dark/light mode.
+  function setTheme(theme) {
+    document.body.classList.toggle("light", theme === "light");
+
+    $("themeBtn").textContent = theme === "light"
+      ? "☾ Dark Mode"
+      : "☀ Light Mode";
+
+    localStorage.setItem("wildsnake-theme", theme);
+  }
+
+  $("themeBtn").addEventListener("click", () => {
+    const newTheme = document.body.classList.contains("light")
+      ? "dark"
+      : "light";
+
+    setTheme(newTheme);
+  });
+
+  setTheme(localStorage.getItem("wildsnake-theme") || "dark");
+
+  // Repaint when an image finishes loading.
+  Object.values(assets).forEach(image => {
+    image.addEventListener("load", () => {
+      draw();
+    });
+  });
+
+  // Start.
+  resetGame();
+})();
