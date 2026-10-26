@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
+  color-scheme: dark;
   --bg: #07140d;
-  --panel: rgba(12, 31, 22, 0.92);
+  --panel: rgba(12, 31, 22, 0.94);
   --line: rgba(190, 231, 164, 0.18);
   --text: #edf7e7;
   --muted: #a6bea0;
@@ -27,18 +28,23 @@ select {
   font: inherit;
 }
 
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .container {
   min-height: 100vh;
   padding: 28px 18px;
   background:
-    radial-gradient(ellipse at 15% 0%, #30643055, transparent 38%),
+    radial-gradient(ellipse at 12% 0%, #30643055, transparent 38%),
     radial-gradient(ellipse at 90% 25%, #19533544, transparent 32%),
     linear-gradient(135deg, #07140d, #10291a 55%, #07130d);
 }
 
 .topbar,
 .hero,
-.layout {
+.layout,
+footer {
   max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
@@ -53,6 +59,8 @@ select {
 }
 
 .brand {
+  color: var(--text);
+  text-decoration: none;
   font-size: 22px;
   font-weight: 800;
   letter-spacing: -1px;
@@ -74,11 +82,18 @@ select {
 }
 
 .btn:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.12);
 }
 
 .btn:active {
   transform: scale(0.97);
+}
+
+.btn:focus-visible,
+.key:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .primary {
@@ -106,24 +121,26 @@ select {
 .hero h1 {
   margin: 15px 0;
   font-size: clamp(36px, 5vw, 60px);
-  line-height: 1;
+  line-height: 1.05;
   letter-spacing: -3px;
 }
 
 .description {
+  max-width: 600px;
   color: var(--muted);
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 .stats {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   margin-top: 22px;
 }
 
 .stat {
-  min-width: 110px;
+  min-width: 105px;
   padding: 13px 17px;
   background: var(--panel);
   border: 1px solid var(--line);
@@ -139,7 +156,7 @@ select {
 }
 
 .stat strong {
-  font-size: 25px;
+  font-size: 24px;
 }
 
 .layout {
@@ -173,7 +190,7 @@ select {
   display: inline-block;
   width: 8px;
   height: 8px;
-  margin-right: 5px;
+  margin-right: 7px;
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 12px #b8ff7066;
@@ -190,6 +207,8 @@ select {
 
 .arena {
   position: relative;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
 canvas {
@@ -214,17 +233,31 @@ canvas {
   backdrop-filter: blur(5px);
 }
 
+.overlay-content {
+  max-width: 400px;
+}
+
+.overlay-kicker {
+  color: var(--accent) !important;
+  font-size: 10px !important;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
 .overlay h2 {
-  margin: 0 0 10px;
+  margin: 8px 0 10px;
   font-size: clamp(23px, 4vw, 35px);
   letter-spacing: -1.5px;
 }
 
 .overlay p {
-  margin-bottom: 20px;
   color: var(--muted);
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.7;
+}
+
+.overlay .btn {
+  margin-top: 10px;
 }
 
 .game-actions {
@@ -256,12 +289,18 @@ canvas {
 }
 
 .key {
+  min-width: 0;
   height: 39px;
   border: 1px solid var(--line);
   border-radius: 9px;
   background: #122b1c;
   color: var(--text);
   cursor: pointer;
+  font-size: 17px;
+}
+
+.key:active {
+  background: #2e5835;
 }
 
 .hint {
@@ -283,7 +322,7 @@ canvas {
 }
 
 select {
-  max-width: 120px;
+  max-width: 125px;
   padding: 7px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -292,35 +331,50 @@ select {
   font-size: 11px;
 }
 
-.tips {
-  padding-left: 17px;
+.tier-label {
+  margin: 16px 0 5px;
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.wildlife-list {
+  margin: 0;
   color: var(--muted);
   font-size: 12px;
   line-height: 1.8;
 }
 
-.tips li {
-  padding: 4px 0;
+.warning {
+  margin-top: 17px;
+  padding: 12px;
+  border: 1px solid #e8b66a3b;
+  border-radius: 10px;
+  background: #e8b66a0b;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
 }
 
-.tips b {
-  color: var(--accent);
+.warning strong {
+  color: #ffd08b;
 }
 
 footer {
-  max-width: 1080px;
-  margin: 25px auto 0;
+  margin-top: 25px;
   color: var(--muted);
   font: 10px monospace;
   letter-spacing: 2px;
   text-align: center;
 }
 
-/* LIGHT MODE */
+/* Light mode */
 
 body.light {
+  color-scheme: light;
   --bg: #e8f2d9;
-  --panel: rgba(249, 255, 242, 0.94);
+  --panel: rgba(249, 255, 242, 0.95);
   --line: #a8c69a;
   --text: #1b321d;
   --muted: #47664a;
@@ -335,7 +389,7 @@ body.light .container {
 
 body.light .brand span,
 body.light .hero h1 span,
-body.light .tips b {
+body.light .tier-label {
   color: #477e2d;
 }
 
@@ -353,7 +407,19 @@ body.light .board-wrap {
   background: #cfe2c0;
 }
 
-/* RESPONSIVE DESIGN */
+body.light .overlay {
+  background: #eaf5e6e8;
+}
+
+body.light .overlay h2 {
+  color: #1b321d;
+}
+
+body.light .warning strong {
+  color: #80551c;
+}
+
+/* Mobile */
 
 @media (max-width: 780px) {
   .container {
@@ -387,8 +453,8 @@ body.light .board-wrap {
 
 @media (max-width: 430px) {
   .game-header {
-    font-size: 9px;
     padding: 14px 10px;
+    font-size: 9px;
   }
 
   .game-actions .btn {
@@ -397,5 +463,14 @@ body.light .board-wrap {
 
   .hero h1 {
     font-size: 38px;
+  }
+
+  .stat {
+    min-width: 85px;
+    padding: 11px;
+  }
+
+  .stat strong {
+    font-size: 21px;
   }
 }
