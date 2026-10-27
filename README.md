@@ -172,7 +172,7 @@ Improved mobile controls and gameplay.
 👨‍💻 Author
 SYED ADAM
 SAMPATH
-GitHub:syedadam1
+GitHub:syedadam1,
 GitHub:sampath-2008
 
 Explore the jungle. Hunt for food. Survive longer. Become the ultimate WildSnake! 🐍🌿
