@@ -1,3 +1,4 @@
+#include<bits/stdc++.h>
 #include "ScoreManager.h"
 #include <algorithm>
 #include <fstream>
