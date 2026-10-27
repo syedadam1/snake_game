@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#10271b">
+    <title>WildSnake | Snake Game Engine</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/api.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/game.js" defer></script>
+    <script src="js/controls.js" defer></script>
+</head>
+<body>
+    <main class="app">
+        <header class="header">
+            <div class="brand">
+                <span class="brand-icon">🐍</span>
+                <div>
+                    <h1>WildSnake</h1>
+                    <p class="subtitle">Jungle Survival Game Engine</p>
+                </div>
+            </div>
+            <div id="connection-status" class="connection-status">
+                Connecting to C++ backend...
+            </div>
+        </header>
+
+        <section class="game-layout">
+            <div class="game-panel">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Jungle Arena</h2>
+                        <p>Collect food and avoid collisions.</p>
+                    </div>
+                    <span class="live-badge">● LIVE GAME</span>
+                </div>
+
+                <div class="canvas-wrapper">
+                    <canvas
+                        id="game-canvas"
+                        width="720"
+                        height="480"
+                        aria-label="WildSnake game board"
+                    ></canvas>
+                    <div id="loading-overlay" class="loading-overlay">
+                        Connecting to the game engine...
+                    </div>
+                </div>
+
+                <div id="game-status" class="game-status" role="status">
+                    Connecting to game...
+                </div>
+
+                <div class="game-actions">
+                    <button id="start-button" class="button primary" disabled>
+                        Start Game
+                    </button>
+                    <button id="pause-button" class="button secondary" disabled>
+                        Pause
+                    </button>
+                    <button id="restart-button" class="button secondary" disabled>
+                        Restart
+                    </button>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <section class="stat-card">
+                    <span class="stat-label">CURRENT SCORE</span>
+                    <strong id="current-score" class="stat-value">0</strong>
+                    <span class="stat-description">Points collected</span>
+                </section>
+
+                <section class="stat-card">
+                    <span class="stat-label">HIGH SCORE</span>
+                    <strong id="high-score" class="stat-value">0</strong>
+                    <span class="stat-description">Best local score</span>
+                </section>
+
+                <section class="info-card">
+                    <h3>How to Play</h3>
+                    <ul>
+                        <li>Use arrow keys or WASD to move.</li>
+                        <li>Collect the red food to score points.</li>
+                        <li>Avoid the walls and your own body.</li>
+                        <li>Press Space to pause or resume.</li>
+                    </ul>
+                </section>
+
+                <section class="info-card">
+                    <h3>Controls</h3>
+                    <div class="direction-pad">
+                        <span></span>
+                        <button class="direction-button" data-direction="UP"
+                                aria-label="Move up">▲</button>
+                        <span></span>
+
+                        <button class="direction-button" data-direction="LEFT"
+                                aria-label="Move left">◀</button>
+                        <button class="direction-button" data-direction="DOWN"
+                                aria-label="Move down">▼</button>
+                        <button class="direction-button" data-direction="RIGHT"
+                                aria-label="Move right">▶</button>
+                    </div>
+                </section>
+            </aside>
+        </section>
+
+        <footer class="footer">
+            <span>WildSnake Game Engine</span>
+            <span>HTML · CSS · JavaScript · C++17</span>
+        </footer>
+    </main>
+</body>
+</html>
