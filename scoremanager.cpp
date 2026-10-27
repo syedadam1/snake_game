@@ -1,6 +1,7 @@
 #include "ScoreManager.h"
 #include <algorithm>
 #include <fstream>
+#include <limits>
 #include <stdexcept>
 #include <utility>
 
