@@ -170,7 +170,7 @@ A leaderboard for comparing high scores.
 Improved mobile controls and gameplay.
 
 👨‍💻 Author
-SYED ADAM
+SYED ADAM,
 SAMPATH
 GitHub:syedadam1,
 GitHub:sampath-2008
