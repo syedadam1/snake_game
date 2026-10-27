@@ -1,1 +1,63 @@
 
+# Project Workflow — Snake Game
+
+This document explains the development workflow followed while building the Snake Game project.
+
+## 1. Project Planning
+- Decided to build a browser-based Snake Game.
+- Planned the game interface, controls, scoring system, and gameplay features.
+- Organized the project files for HTML, CSS, and JavaScript.
+
+## 2. Development
+- Used **HTML5** to create the game structure.
+- Used **CSS3** to design the interface and make it responsive.
+- Used **JavaScript** to implement snake movement, food spawning, collision detection, scoring, and game controls.
+- Used **HTML5 Canvas** to render the game board and game elements.
+
+## 3. Feature Implementation
+- Implemented keyboard controls using arrow keys and WASD.
+- Added start, pause, and reset functionality.
+- Added different speed settings.
+- Implemented wall collision and wrap-around options.
+- Added score tracking and best-score storage.
+- Added sound effects and a theme toggle.
+- Implemented wildlife food progression and mongoose obstacles.
+
+## 4. Testing
+- Tested movement and direction changes.
+- Checked collisions with walls, the snake's body, and obstacles.
+- Tested scoring and best-score updates.
+- Checked pause, resume, and reset functionality.
+- Tested different speed settings and screen sizes.
+- Checked that the game runs in a web browser.
+
+## 5. Version Control with Git
+- Used Git to track project changes.
+- Added and committed updated project files.
+- Pushed changes to the GitHub repository.
+
+Example commands:
+
+```bash
+git add .
+git commit -m "Update snake game"
+git push
+```
+
+## 6. Deployment
+- Stored the source code in the `snake_game` GitHub repository.
+- Used GitHub Pages to host the game, if deployment is enabled.
+- Tested the published website in a browser.
+
+## 7. Future Improvements
+- Add more animations and visual effects.
+- Improve mobile controls.
+- Add new game modes and difficulty levels.
+- Improve the overall gameplay experience.
+
+---
+
+**Project Name:** Snake Game  
+**Repository:** `snake_game`  
+**Technologies:** HTML5, CSS3, JavaScript, HTML5 Canvas  
+**Development Environment:** Visual Studio Code on Arch Linux
