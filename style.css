@@ -1,0 +1,360 @@
+:root {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #edf7ed;
+    background: #09150f;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    --panel: #12251a;
+    --panel-light: #1a3323;
+    --green: #7be495;
+    --green-dark: #285d3a;
+    --text-muted: #a2b9a8;
+    --border: #294635;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at top left, #183d28 0%, transparent 45%),
+        #09150f;
+}
+
+button {
+    font: inherit;
+}
+
+button:focus-visible {
+    outline: 3px solid #b4ffc5;
+    outline-offset: 3px;
+}
+
+.app {
+    width: min(1200px, 94%);
+    margin: 0 auto;
+    padding: 28px 0;
+}
+
+.header,
+.brand,
+.panel-heading,
+.game-actions,
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.header {
+    margin-bottom: 28px;
+}
+
+.brand {
+    justify-content: flex-start;
+}
+
+.brand-icon {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    background: #1b3d29;
+    border: 1px solid #426f4d;
+    border-radius: 16px;
+    font-size: 32px;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 4px;
+    font-size: 30px;
+    letter-spacing: -1px;
+}
+
+.subtitle,
+.panel-heading p {
+    margin-bottom: 0;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.connection-status {
+    padding: 10px 14px;
+    color: #f8d88b;
+    background: #332b16;
+    border: 1px solid #67562a;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.connection-status.connected {
+    color: var(--green);
+    background: #163422;
+    border-color: #326947;
+}
+
+.connection-status.disconnected {
+    color: #ffb1a9;
+    background: #3b1d1b;
+    border-color: #783c36;
+}
+
+.game-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 270px;
+    align-items: start;
+    gap: 22px;
+}
+
+.game-panel,
+.stat-card,
+.info-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.game-panel {
+    min-width: 0;
+    padding: 22px;
+}
+
+.panel-heading {
+    margin-bottom: 20px;
+}
+
+.panel-heading h2 {
+    margin-bottom: 6px;
+    font-size: 21px;
+}
+
+.live-badge {
+    flex-shrink: 0;
+    padding: 7px 10px;
+    color: var(--green);
+    background: #183923;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.canvas-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background: #0c1d12;
+    border: 1px solid #31543a;
+    border-radius: 12px;
+}
+
+#game-canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.loading-overlay {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    color: var(--green);
+    background: rgb(9 21 15 / 92%);
+    text-align: center;
+}
+
+.loading-overlay.hidden {
+    display: none;
+}
+
+.game-status {
+    min-height: 24px;
+    margin: 16px 0;
+    color: var(--text-muted);
+    font-size: 14px;
+    text-align: center;
+}
+
+.game-status.error {
+    color: #ffb1a9;
+}
+
+.game-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.button {
+    min-width: 110px;
+    padding: 11px 18px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: 650;
+    transition: background 0.15s, transform 0.15s;
+}
+
+.button:hover:not(:disabled),
+.direction-button:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.button:disabled,
+.direction-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+}
+
+.button.primary {
+    color: #092013;
+    background: var(--green);
+}
+
+.button.primary:hover:not(:disabled) {
+    background: #a0f5b3;
+}
+
+.button.secondary {
+    color: #e4f2e7;
+    background: var(--panel-light);
+    border-color: #365642;
+}
+
+.button.secondary:hover:not(:disabled) {
+    background: #264731;
+}
+
+.sidebar {
+    display: grid;
+    gap: 16px;
+}
+
+.stat-card,
+.info-card {
+    padding: 20px;
+}
+
+.stat-label {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--green);
+    font-size: 38px;
+    line-height: 1;
+}
+
+.stat-description {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.info-card h3 {
+    margin-bottom: 14px;
+    font-size: 16px;
+}
+
+.info-card ul {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding-left: 19px;
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.direction-pad {
+    display: grid;
+    grid-template-columns: repeat(3, 44px);
+    justify-content: center;
+    gap: 6px;
+}
+
+.direction-button {
+    width: 44px;
+    height: 40px;
+    color: #e4f2e7;
+    background: var(--panel-light);
+    border: 1px solid #365642;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.15s;
+}
+
+.direction-button:hover:not(:disabled) {
+    background: #31583b;
+}
+
+.footer {
+    flex-wrap: wrap;
+    margin-top: 24px;
+    padding: 16px 4px;
+    color: #809b88;
+    font-size: 12px;
+}
+
+@media (max-width: 850px) {
+    .game-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 520px) {
+    .app {
+        width: 96%;
+        padding-top: 16px;
+    }
+
+    .game-panel {
+        padding: 12px;
+    }
+
+    .sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .panel-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .button {
+        flex: 1;
+        min-width: 90px;
+        padding: 10px;
+    }
+}
