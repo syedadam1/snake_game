@@ -1,4 +1,4 @@
-```cpp
+
 #ifndef SCOREMANAGER_H
 #define SCOREMANAGER_H
 
@@ -25,4 +25,3 @@ public:
 };
 
 #endif
-```

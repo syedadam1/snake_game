@@ -1,5 +1,4 @@
 #include "Game.h"
-
 #include <httplib.h>
 #include <nlohmann/json.hpp>
 

@@ -2,7 +2,7 @@
 #include "Point.h"
 #include "Snake.h"
 #include "World.h"
-
+# include<bits/stdc++.h>
 #include <exception>
 #include <iostream>
 #include <stdexcept>

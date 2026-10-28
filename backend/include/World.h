@@ -1,4 +1,4 @@
-```cpp
+
 #ifndef WORLD_H
 #define WORLD_H
 
@@ -51,4 +51,3 @@ public:
 };
 
 #endif
-```

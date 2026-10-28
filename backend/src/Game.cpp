@@ -1,5 +1,6 @@
 #include "Game.h"
 #include <vector>
+# include<bits/stdc++.h>
 
 Game::Game(int width, int height)
     : snake_(Point{width / 2, height / 2}),
