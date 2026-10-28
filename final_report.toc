@@ -1,0 +1,31 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Background}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Project overview}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Problem statement}{1}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Objectives}{1}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Scope and Requirements}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Scope}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Functional requirements}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Non-functional requirements}{4}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Use cases}{4}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Design and Architecture}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Layered architecture}{5}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Class design and OOP concepts}{5}{section.3.2}%
+\contentsline {section}{\numberline {3.3}UML class specification tables}{6}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Sequence: one game tick}{7}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Activity: tick and collision handling}{8}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Implementation}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Technology stack and modules}{9}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Representative OOP code}{9}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Encapsulated game model and observer abstraction}{9}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Direction validation and movement}{10}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Tick orchestration and composition}{11}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}HTTP API}{11}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Testing and Results}{12}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Test approach}{12}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Test status and observed repository limitations}{12}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Screenshots}{13}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Conclusion and Future Work}{15}{chapter.6}%
+\contentsline {chapter}{References}{16}{chapter*.7}%
+\contentsline {chapter}{\numberline {A}Build and Run Guide}{17}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Submission Completion Checklist}{18}{appendix.B}%

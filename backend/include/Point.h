@@ -21,4 +21,3 @@ struct Point
 };
 
 #endif
-
