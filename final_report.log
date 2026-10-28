@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.28)  28 OCT 2026 22:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.28)  28 OCT 2026 23:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1152,7 +1152,18 @@ Underfull \hbox (badness 1490) in paragraph at lines 525--528
 
 [12
 
-] [13] [14]
+]
+<report-assets/game-start.png, id=348, 1012.78375pt x 843.15pt>
+File: report-assets/game-start.png Graphic file (type png)
+<use report-assets/game-start.png>
+Package pdftex.def Info: report-assets/game-start.png  used on input line 539.
+(pdftex.def)             Requested size: 400.61703pt x 333.51018pt.
+<report-assets/game-over.png, id=349, 1342.01375pt x 875.27pt>
+File: report-assets/game-over.png Graphic file (type png)
+<use report-assets/game-over.png>
+Package pdftex.def Info: report-assets/game-over.png  used on input line 550.
+(pdftex.def)             Requested size: 400.61703pt x 261.27419pt.
+ [13 <./report-assets/game-start.png>] [14 <./report-assets/game-over.png>]
 Chapter 6.
 [15
 
@@ -1177,14 +1188,18 @@ Appendix B.
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `final_report.out' has not changed.
 (rerunfilecheck)             Checksum: 92230D7D8570E6FE41E326BA0A843AF1;5177.
  ) 
 Here is how much of TeX's memory you used:
- 25877 strings out of 467871
- 479659 string characters out of 5418375
- 1343602 words of memory out of 5000000
- 54071 multiletter control sequences out of 15000+600000
+ 25887 strings out of 467871
+ 480002 string characters out of 5418375
+ 1343681 words of memory out of 5000000
+ 54081 multiletter control sequences out of 15000+600000
  691908 words of font info for 137 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,10n,94p,1011b,2106s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1199,9 +1214,9 @@ sers/tathi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/U
 sers/tathi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/U
 sers/tathi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/U
 sers/tathi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on final_report.pdf (26 pages, 386742 bytes).
+Output written on final_report.pdf (26 pages, 551159 bytes).
 PDF statistics:
- 471 PDF objects out of 1000 (max. 8388607)
+ 473 PDF objects out of 1000 (max. 8388607)
  146 named destinations out of 1000 (max. 500000)
- 38661 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 38671 words of extra memory for PDF output out of 42996 (max. 10000000)
 
