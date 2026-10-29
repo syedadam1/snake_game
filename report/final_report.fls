@@ -1,6 +1,6 @@
-PWD C:\Users\tathi\OneDrive\Documents\snake_game
+PWD C:\Users\tathi\OneDrive\Documents\snake_game\report
 INPUT C:\Users\tathi\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\tathi\OneDrive\Documents\snake_game\final_report.tex
+INPUT c:\Users\tathi\OneDrive\Documents\snake_game\report\final_report.tex
 OUTPUT final_report.log
 INPUT C:\Users\tathi\AppData\Local\Programs\MiKTeX\tex\latex\base\report.cls
 INPUT C:\Users\tathi\AppData\Local\Programs\MiKTeX\tex\latex\base\report.cls
@@ -67,6 +67,8 @@ INPUT C:\Users\tathi\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.c
 INPUT C:\Users\tathi\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.cfg
 INPUT C:\Users\tathi\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
 INPUT C:\Users\tathi\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\tathi\AppData\Local\Programs\MiKTeX\tex\latex\tools\longtable.sty
+INPUT C:\Users\tathi\AppData\Local\Programs\MiKTeX\tex\latex\tools\longtable.sty
 INPUT C:\Users\tathi\AppData\Local\Programs\MiKTeX\tex\latex\tools\array.sty
 INPUT C:\Users\tathi\AppData\Local\Programs\MiKTeX\tex\latex\tools\array.sty
 INPUT C:\Users\tathi\AppData\Local\Programs\MiKTeX\tex\latex\enumitem\enumitem.sty
@@ -328,6 +330,18 @@ INPUT C:\Users\tathi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr8.t
 INPUT C:\Users\tathi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
 INPUT C:\Users\tathi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr6.tfm
 INPUT C:\Users\tathi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtk10.tfm
+INPUT .\report-assets\game-start.png
+INPUT .\report-assets\game-start.png
+INPUT .\report-assets\game-start.png
+INPUT .\report-assets\game-start.png
+INPUT .\report-assets\game-start.png
+INPUT .\report-assets\game-start.png
+INPUT .\report-assets\game-over.png
+INPUT .\report-assets\game-over.png
+INPUT .\report-assets\game-over.png
+INPUT .\report-assets\game-over.png
+INPUT .\report-assets\game-over.png
+INPUT .\report-assets\game-over.png
 INPUT C:\Users\tathi\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT C:\Users\tathi\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT C:\Users\tathi\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty

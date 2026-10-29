@@ -378,7 +378,50 @@ Class & Attributes (visibility) & Public operations (visibility)\\
 \end{figure}
 
 \chapter{Implementation}
-\section{Technology stack and modules}
+\section{Technology stack}
+WildSnake uses a lightweight browser frontend and a C++17 backend. The
+frontend is implemented with native browser technologies and does not use a
+JavaScript framework. The C++ game engine owns the authoritative gameplay
+state; an HTTP/JSON interface carries input requests to the engine and returns
+state for the browser to render.
+
+\begin{table}[H]
+\centering
+\caption{Technology stack and its role in WildSnake}
+\label{tab:technology-stack}
+\begin{tabular}{p{39mm}p{96mm}}
+\toprule
+Technology & Role in the project\\\midrule
+C++17 and standard library & Implement the game engine and model. The project
+uses containers such as \texttt{deque} and \texttt{vector}, random-number
+utilities, smart pointers, file streams, and a mutex.\\
+HTML5 and CSS3 & Structure and style the browser interface.\\
+JavaScript and Canvas & Handle keyboard and button input, call the backend,
+run the browser game loop, and draw the board and game entities.\\
+HTTP and JSON & Connect the frontend and backend through the state, direction,
+tick, and reset endpoints.\\
+cpp-httplib & Provide the lightweight C++ HTTP server; CMake fetches version
+0.18.3.\\
+ nlohmann-json & Parse and serialize JSON in the server; CMake fetches version
+3.12.0.\\
+CMake and CTest & Configure the C++17 build and register the game test
+executable. The presence of the test target does not by itself confirm that
+the tests pass.\\
+Python 3 & Serve the static frontend locally during development using Python's
+HTTP server.\\
+Browser local storage & Store the high-score value shown by the frontend;
+this is separate from the standalone C++ \texttt{ScoreManager}.\\
+Git and GitHub & Track source changes and host the project repository.\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The backend dependencies are declared in \texttt{backend/CMakeLists.txt} and
+are fetched by CMake. The project uses no frontend framework: the browser
+modules are plain JavaScript files that communicate with the local C++ server
+at \texttt{127.0.0.1:8080}.
+
+\subsection{Project modules}
 \begin{table}[H]
 \centering
 \caption{Project modules}

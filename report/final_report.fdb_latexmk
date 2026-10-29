@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1793205238.46662 "c:/Users/tathi/OneDrive/Documents/snake_game/final_report.tex" "final_report.pdf" "final_report" 1793205240.04544 0
+["pdflatex"] 1793298103.24171 "c:/Users/tathi/OneDrive/Documents/snake_game/report/final_report.tex" "final_report.pdf" "final_report" 1793298106.76551 0
   "C:/Users/tathi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1793205203.41719 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/tathi/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1793165798.1892 13333488 03613e529d7445b316dac76c6102fbb0 ""
   "C:/Users/tathi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -170,14 +170,17 @@
   "C:/Users/tathi/AppData/Local/Programs/MiKTeX/tex/latex/refcount/refcount.sty" 1576433952 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "C:/Users/tathi/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1751104012 9684 a33a14b82ce60d6e77cb9be689d79ee6 ""
   "C:/Users/tathi/AppData/Local/Programs/MiKTeX/tex/latex/tools/array.sty" 1761901070 15651 9d7c62df82cb29a555c00550babfe364 ""
+  "C:/Users/tathi/AppData/Local/Programs/MiKTeX/tex/latex/tools/longtable.sty" 1761901070 16014 dfa4b4d4e04a78a3f05a90c19711737a ""
   "C:/Users/tathi/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/tathi/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/tathi/OneDrive/Documents/snake_game/final_report.tex" 1793205232.88213 23212 ede1eaea14fa1e8367c9b198e9550084 ""
-  "final_report.aux" 1793205239.76244 7704 92664e38c84466ef6026724d600bf546 "pdflatex"
-  "final_report.lof" 1793205239.76743 1017 d1b7dfda7d235b25e991b75c11abd31e "pdflatex"
-  "final_report.lot" 1793205239.76743 609 b53eacd40db18abb40bd2a6376a2587e "pdflatex"
-  "final_report.out" 1793205239.76543 4963 d9a1a48dd233e605ccd48a90c95cf943 "pdflatex"
-  "final_report.toc" 1793205239.76743 2439 f039fd54445d154e5d51a90ada90640d "pdflatex"
+  "c:/Users/tathi/OneDrive/Documents/snake_game/report/final_report.tex" 1793298091.34404 28529 98b7c1516a671dd6a91672734c562219 ""
+  "final_report.aux" 1793298106.37735 8869 6bc817808d9d23cbfa78df8bb994c17f "pdflatex"
+  "final_report.lof" 1793298106.41361 986 6239b2667bc97461300ce80de168c574 "pdflatex"
+  "final_report.lot" 1793298106.41361 939 719c8effbce03595664939803275c57e "pdflatex"
+  "final_report.out" 1793298106.4032 5251 e3919bf388dcd8afbf63c00f31fdcb9d "pdflatex"
+  "final_report.toc" 1793298106.41261 2606 17b787d7920a12cb6ffae7a340b73850 "pdflatex"
+  "report-assets/game-over.png" 1793210692.71047 104349 45e29818bc3a187417698765c8ddb2f3 ""
+  "report-assets/game-start.png" 1793210686.59832 60214 1fb10204612511b0813ec052210e539a ""
   (generated)
   "final_report.aux"
   "final_report.lof"

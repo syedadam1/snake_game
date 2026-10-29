@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.28)  28 OCT 2026 23:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.28)  29 OCT 2026 23:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1137,37 +1137,38 @@ Overfull \hbox (21.77357pt too wide) in alignment at lines 311--327
 
 [7] [8]
 Chapter 4.
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 404.
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 405.
 [9
 
-] [10] [11]
+] [10]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 447.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 448.
+ [11] [12] [13]
 Chapter 5.
 
-Underfull \hbox (badness 1490) in paragraph at lines 525--528
+Underfull \hbox (badness 1490) in paragraph at lines 568--571
 []|\T1/lmr/m/n/12 (+20) Eat/grow/score, wall col-li-sion, self-
  []
 
-[12
+[14
 
 ]
-<report-assets/game-start.png, id=348, 1012.78375pt x 843.15pt>
+<report-assets/game-start.png, id=363, 1012.78375pt x 843.15pt>
 File: report-assets/game-start.png Graphic file (type png)
 <use report-assets/game-start.png>
-Package pdftex.def Info: report-assets/game-start.png  used on input line 539.
+Package pdftex.def Info: report-assets/game-start.png  used on input line 582.
 (pdftex.def)             Requested size: 400.61703pt x 333.51018pt.
-<report-assets/game-over.png, id=349, 1342.01375pt x 875.27pt>
+<report-assets/game-over.png, id=364, 1342.01375pt x 875.27pt>
 File: report-assets/game-over.png Graphic file (type png)
 <use report-assets/game-over.png>
-Package pdftex.def Info: report-assets/game-over.png  used on input line 550.
+Package pdftex.def Info: report-assets/game-over.png  used on input line 593.
 (pdftex.def)             Requested size: 400.61703pt x 261.27419pt.
- [13 <./report-assets/game-start.png>] [14 <./report-assets/game-over.png>]
+ [15 <./report-assets/game-start.png>] [16 <./report-assets/game-over.png>]
 Chapter 6.
-[15
+[17
 
-] [16
+] [18
 
 ]
 Appendix A.
@@ -1177,32 +1178,28 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 (C:\Users\tathi\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
-[17
+[19
 
 ]
 Appendix B.
-[18
+[20
 
 ] (final_report.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `final_report.out' has not changed.
-(rerunfilecheck)             Checksum: 92230D7D8570E6FE41E326BA0A843AF1;5177.
+(rerunfilecheck)             Checksum: E3919BF388DCD8AFBF63C00F31FDCB9D;5251.
  ) 
 Here is how much of TeX's memory you used:
- 25887 strings out of 467871
- 480002 string characters out of 5418375
- 1343681 words of memory out of 5000000
- 54081 multiletter control sequences out of 15000+600000
- 691908 words of font info for 137 fonts, out of 8000000 for 9000
+ 25905 strings out of 467871
+ 480266 string characters out of 5418375
+ 1356753 words of memory out of 5000000
+ 54083 multiletter control sequences out of 15000+600000
+ 692454 words of font info for 143 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,10n,94p,1011b,2106s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,10n,94p,1011b,1318s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/tathi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
 b><C:/Users/tathi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb
 ><C:/Users/tathi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb>
@@ -1214,9 +1211,9 @@ sers/tathi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/U
 sers/tathi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/U
 sers/tathi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/U
 sers/tathi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on final_report.pdf (26 pages, 551159 bytes).
+Output written on final_report.pdf (28 pages, 555565 bytes).
 PDF statistics:
- 473 PDF objects out of 1000 (max. 8388607)
- 146 named destinations out of 1000 (max. 500000)
- 38671 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 488 PDF objects out of 1000 (max. 8388607)
+ 150 named destinations out of 1000 (max. 500000)
+ 38679 words of extra memory for PDF output out of 42996 (max. 10000000)
 

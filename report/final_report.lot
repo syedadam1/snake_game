@@ -5,10 +5,11 @@
 \contentsline {table}{\numberline {3.1}{UML class table: model data types and entities}}{6}{table.3.1}%
 \contentsline {table}{\numberline {3.2}{UML class table: game coordination and score utility}}{7}{table.3.2}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Project modules}}{9}{table.4.1}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Backend API operations}}{11}{table.4.2}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Technology stack and its role in WildSnake}}{10}{table.4.1}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Project modules}}{11}{table.4.2}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Backend API operations}}{13}{table.4.3}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Coverage in the existing test source (not a claim of passing tests)}}{13}{table.5.1}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Coverage in the existing test source (not a claim of passing tests)}}{15}{table.5.1}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
